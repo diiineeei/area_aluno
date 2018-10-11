@@ -7,8 +7,8 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/login_style.css' %}">
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">logout</a></p>
+  Altenticação efetuada com sucesso! sejá bem vindo {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Desconectar</a></p>
 {% else %}
   <p>Você não está logado</p>
   <a href="{% url 'login' %}">Entrar</a>
