@@ -189,7 +189,7 @@ h2 {margin-top: 4%; font-size: 1.5em; font-weight: bold; color: #575757;}
     background-position: center;
 }
 .imagem01{
-    background-image: url(../img/noticias/noticias-filmes.jpg);
+    background-image: url("../images/noticias/noticias-filmes.jpg");
 	margin-left: 250px;
 	height: 500px;
 	width: 800px;

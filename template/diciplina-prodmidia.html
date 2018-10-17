@@ -1,40 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <title>Faculdade FMJ de Tecnologia</title>
-        <meta charset="UTF-8"/>
-        <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-        <link rel="stylesheet" type="text/css" href="css/diciplina_prodmidia.css"/>
-        <link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
-        <link rel="shortcut icon" type="image/x-icon" href="">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-        
-       
-    </head>
-    <body>
+{% extends 'base.html' %}
+
+{% block title %}Faculdade FMJ de Tecnologia{% endblock %}
+
+{% block content %}
+{% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/diciplina_prodmidia.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
         <div class="container">
             <a href="#"><i class="fa fa-chevron-up " aria-hidden="true"></i></a>
             <header class="navigation"> <!-- top navigation -->
-                
                 <nav><div class="logo"></div>
-                    
-                    <ul>
-                            <li><a class="homeBT" href="index.html">Home</a></li>
-                            <li><a class="BT3"href="cursos.html">Cursos</a></li>
-                            <li><a class="BT4"href="noticias.html">Noticias</a></li>
-                        </ul>
-                        
+            <ul>
+                <li><a class="homeBT" href="{% url 'home' %}">Home</a></li>
+                <li><a class="BT3" href="{% url 'cursos' %}">Cursos</a></li>
+                <li><a class="BT4" href="{% url 'noticias' %}">Noticias</a></li>
+                {% if user.is_authenticated %}
+                <li><a class="BT4" href="{% url 'logout' %}">Sejá bem vindo {{ user.username }} (sair)</a></li>
+                {% else %}
+                <li><a class="BT4" href="{% url 'login' %}">Acesso Restrito</a></li>
+                {% endif %}
+            </ul>
                 </nav>
                 <h1><span>BEM VINDO</span><br>Desenvolva o futuro</h1>
-               
             </header>
             <h2>Conheça os 9 melhores filmes sobre tecnologia</h2>
 			   <p class= "text1"> Autor: Rogério Ramalho 24/08/2018</p>
-			   
                <section class="sv1"> <!-- Div da noticia -->
                 <div class="imagem01"></div>
-                
                   <div class="software">
                     <h3>1º Semestre</h3>
                     <p>Teoria da Cor: 80 horas<br>
@@ -71,8 +69,6 @@
                     <p>Atividades Complementares: 100 horas</p>
                   </div>
                </section>
-			   
-		
             <footer>
                 <p class="fim">FMJ &copy; All Rights Reserved</p>
                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -82,4 +78,4 @@
             </footer>
         </div> <!-- container -->
     </body>
-</html>
+{% endblock %}

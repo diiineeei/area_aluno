@@ -12,8 +12,6 @@
     border-radius: 50%;
 }
 
-
-
 .logo {
     background-image: url("../images/logohead.png");
     width: 45%; 
@@ -188,7 +186,7 @@ h2 {margin-top: 4%; font-size: 1.5em; font-weight: bold; color: #575757;}
     background-position: center;
 }
 .imagem01{
-    background-image: url(../img/disciplinas/podmidia.jpg);
+    background-image: url("../images/disciplinas/podmidia.jpg");
 	margin-left: 250px;
 	height: 500px;
 	width: 800px;
