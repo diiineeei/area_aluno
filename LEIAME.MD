@@ -2,4 +2,4 @@ O comando migrate verifica a configuração em INSTALLED_APPS e cria qualquer ta
 > python manage.py migrate
 
 Comando usado para iniciar o projeto
->python manage.py runserver
+> python manage.py runserver
